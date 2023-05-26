@@ -1,8 +1,8 @@
-#Projeto clone tela da DIO com REACT
+# Projeto clone tela da DIO com REACT
 
 Projeto criado para o BootCamp Orange Tech+ em parceria com a Dio e o Banco Inter.
 
-##O que foi abordado 
+## O que foi abordado !
 
 * O que é o React e como surgiu;
 * Como criar um projeto com React cli;
