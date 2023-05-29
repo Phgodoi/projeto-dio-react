@@ -7,7 +7,7 @@ import { MdEmail, MdLock } from "react-icons/md";
 import { useForm } from "react-hook-form";
 
 import { yupResolver } from "@hookform/resolvers/yup";
-import * as yup from "yup";
+import * as yup from 'yup';
 
 import {
   Column,
@@ -23,8 +23,8 @@ import {
 
 const schema = yup.object({
   email: yup.string().email('Email inválido').required('Campo obrigatório'),
-  password: yup.string().min(3, 'No minimo 3 caracteres').required('Campo obrigatório'),
-}).required();
+  password: yup.string().min(3, 'No mínimo 3 caracteres').required('Campo obrigatório'),
+});
 
 const Login = () => {
   const navigate = useNavigate();
@@ -59,7 +59,7 @@ const Login = () => {
             <form onSubmit={handleSubmit(onSubmit)}>
               <Input
                 name="email"
-                errorMessage={errors.email.message}
+                errorMessage={errors?.email?.message}
                 control={control}
                 placeholder="Email"
                 type="email"
@@ -68,6 +68,7 @@ const Login = () => {
 
               <Input
                 name="password"
+                errorMessage={errors?.password?.message}
                 control={control}
                 placeholder="Senha"
                 type="password"
