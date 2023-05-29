@@ -7,7 +7,9 @@ import { MdEmail, MdLock } from "react-icons/md";
 import { useForm } from "react-hook-form";
 
 import { yupResolver } from "@hookform/resolvers/yup";
-import * as yup from 'yup';
+import * as yup from "yup";
+
+import { api } from "../../services/api";
 
 import {
   Column,
@@ -22,24 +24,36 @@ import {
 } from "./style";
 
 const schema = yup.object({
-  email: yup.string().email('Email inválido').required('Campo obrigatório'),
-  password: yup.string().min(3, 'No mínimo 3 caracteres').required('Campo obrigatório'),
+  email: yup.string().email("Email inválido").required("Campo obrigatório"),
+  password: yup
+    .string()
+    .min(3, "No mínimo 3 caracteres")
+    .required("Campo obrigatório"),
 });
 
 const Login = () => {
   const navigate = useNavigate();
 
-  const {control , handleSubmit, formState: { errors, isValid } } = useForm({
+  const {
+    control,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
     resolver: yupResolver(schema),
-    mode: 'onChange',
+    mode: "onChange",
   });
 
-  console.log(isValid, errors);
-
-  const onSubmit = (data) => console.log(data);
-
-  const handleClickSingIn = () => {
-    navigate("/feed");
+  const onSubmit = async formData => {
+    try {
+      const { data } = await api.get(`users?email=${formData.email}&senha=${formData.password}`);
+      if (data.length === 1) {
+        navigate("/feed");
+      } else {
+        alert('Email ou senha inválidos.')
+      }
+    } catch {
+      alert("Erro desconhecido, tente novamente mais tarde.");
+    }
   };
 
   return (
