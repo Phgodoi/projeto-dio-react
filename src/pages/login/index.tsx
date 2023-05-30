@@ -11,17 +11,8 @@ import * as yup from "yup";
 
 import { api } from "../../services/api";
 
-import {
-  Column,
-  Container,
-  CriarText,
-  EsqueciText,
-  Row,
-  SubtitleLogin,
-  Title,
-  TitleLogin,
-  Wrapper,
-} from "./style";
+import { Column, Container, CriarText, EsqueciText, Row, SubtitleLogin, Title, TitleLogin, Wrapper,} from "./style";
+import { IFormData } from "./types";
 
 const schema = yup.object({
   email: yup.string().email("Email inválido").required("Campo obrigatório"),
@@ -35,15 +26,11 @@ const Login = () => {
   const navigate = useNavigate();
 
   const {
-    control,
-    handleSubmit,
-    formState: { errors },
-  } = useForm({
-    resolver: yupResolver(schema),
-    mode: "onChange",
+    control, handleSubmit, formState: { errors }, } = 
+    useForm <IFormData>({ resolver: yupResolver(schema),mode: "onChange",
   });
 
-  const onSubmit = async formData => {
+  const onSubmit = async (formData: IFormData) => {
     try {
       const { data } = await api.get(`users?email=${formData.email}&senha=${formData.password}`);
       if (data.length === 1) {

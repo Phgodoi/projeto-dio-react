@@ -1,4 +1,3 @@
-import React from "react";
 import logo from "../../assets/logo-full2.png";
 import { Button } from "../Button";
 
@@ -12,8 +11,9 @@ import {
   UserPicture,
   Wrapper,
 } from "./style";
+import { IHeader } from "./types";
 
-const Header = ({ autentication }) => {
+const Header = ({ autentication }: IHeader) => {
   return (
     <Wrapper>
       <Container>
@@ -36,8 +36,8 @@ const Header = ({ autentication }) => {
           ) : (
             <>
               <MenuRight href="#">Home</MenuRight>
-              <Button title="Entrar" />
-              <Button title="Cadastrar" />
+              <Button title= "Entrar" />
+              <Button title= "Cadastrar" />
             </>
           )}
         </Row>
