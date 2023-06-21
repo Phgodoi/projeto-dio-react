@@ -8,3 +8,7 @@ Projeto criado para o BootCamp Orange Tech+ em parceria com a Dio e o Banco Inte
 * Como criar um projeto com React cli;
 * Como usar a biblioteca styled components e para que serve;
 * Como criar rotas com react router dom e como usar;
+* Criação e validação de foms; 
+* Tratamento de erros;
+* Como coverter JavaScript em TypeScript;
+

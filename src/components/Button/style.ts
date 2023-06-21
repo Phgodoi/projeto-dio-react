@@ -14,13 +14,11 @@ export const ButtonContainer = styled.button<IButtonStyled>`
   margin: 8px;
   border: 2px solid black;
 
-  &:hover{
+  &:hover {
     background: #111;
   }
 
-  ${({ variant }) =>
-    variant !== "primary" &&
-    css`
+  ${({ variant }) => variant !== "primary" && css`
       min-width: 167px;
       height: 33px;
 
@@ -42,5 +40,5 @@ export const ButtonContainer = styled.button<IButtonStyled>`
         height: calc(100% + 15px);
         border-radius: 22px;
       }
-    `}
+  ` }
 `;

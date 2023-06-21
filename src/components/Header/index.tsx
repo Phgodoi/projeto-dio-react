@@ -37,7 +37,7 @@ const Header = ({ autentication }: IHeader) => {
             <>
               <MenuRight href="#">Home</MenuRight>
               <Button title= "Entrar" />
-              <Button title= "Cadastrar" />
+              <Button title= "Criar conta" />
             </>
           )}
         </Row>

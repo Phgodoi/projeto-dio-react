@@ -1,3 +1,4 @@
+
 import styled from "styled-components";
 
 export const Container = styled.main`
@@ -27,6 +28,14 @@ export const Row = styled.div`
   margin-top: 20px;
 `;
 
+export const Span = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: baseline;
+  margin-top: 20px;
+`;
+
 export const Title = styled.h2`
   font-family: "Open Sans";
   font-style: normal;
@@ -39,7 +48,7 @@ export const Title = styled.h2`
   color: #fff;
 `;
 
-export const TitleLogin = styled.p`
+export const TitleCreate = styled.p`
   font-family: "Open Sans";
   font-style: normal;
   font-weight: 700;
@@ -47,21 +56,24 @@ export const TitleLogin = styled.p`
   margin-bottom: 20px;
   line-height: 44px;
 `;
-export const SubtitleLogin = styled.p`
+export const SubtitleCreate = styled.p`
   font-family: "Open Sans";
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
   margin-bottom: 35px;
   line-height: 25px;
+ 
 `;
 
-export const EsqueciText = styled.p`
+export const TextHighLight = styled.p`
   font-family: "Open Sans";
   font-style: normal;
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 19px;
+  font-weight: 400;
+  font-size: 18px;
+  padding:  0 10px;
+  margin-bottom: 35px;
+  line-height: 25px;
 
   color: #e5e044;
 
@@ -71,14 +83,16 @@ export const EsqueciText = styled.p`
   }
 `;
 
-export const CriarText = styled.p`
+export const VoltarLogin = styled.p`
   font-family: "Open Sans";
   font-style: normal;
   font-weight: 700;
   font-size: 14px;
   line-height: 19px;
 
-  color: #e23dd7;
+  color: #e23dd9;
+
+  text-transform: uppercase;
   
   &:hover{
     cursor: pointer;
