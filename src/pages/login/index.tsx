@@ -16,7 +16,7 @@ import { IFormData } from "./types";
 
 const schema = yup.object({
   email: yup.string().email("Email inválido").required("Campo obrigatório"),
-  password: yup
+  senha: yup
     .string()
     .min(3, "No mínimo 3 caracteres")
     .required("Campo obrigatório"),
@@ -32,7 +32,7 @@ const Login = () => {
 
   const onSubmit = async (formData: IFormData) => {
     try {
-      const { data } = await api.get(`users?email=${formData.email}&senha=${formData.password}`);
+      const { data } = await api.get(`users?email=${formData.email}&senha=${formData.senha}`);
       if (data.length === 1) {
         navigate("/feed");
       } else {
@@ -68,8 +68,8 @@ const Login = () => {
               />
 
               <Input
-                name="password"
-                errorMessage={errors?.password?.message}
+                name="senha"
+                errorMessage={errors?.senha?.message}
                 control={control}
                 placeholder="Senha"
                 type="password"

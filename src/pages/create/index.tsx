@@ -40,7 +40,7 @@ const schema = yup.object({
     .max(12, "O telefone deve ter no máximo 12 dígitos")
     .required("O telefone é obrigatório"),
 
-  password: yup
+  senha: yup
     .string()
     .min(3, "No mínimo 3 caracteres")
     .required("Campo obrigatório"),
@@ -112,7 +112,7 @@ const Create = () => {
               />
 
               <Input
-                name="password"
+                name="senha"
                 errorMessage={errors?.password?.message}
                 control={control}
                 placeholder="Senha"

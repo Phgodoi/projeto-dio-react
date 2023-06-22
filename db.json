@@ -7,10 +7,11 @@
       "senha": "12345"
     },
     {
-      "id": 2,
-      "name": "Pedro",
-      "email": "pedro@gmail.com",
-      "senha": "12345"
+      "name": "agata",
+      "email": "agata@gmail.com",
+      "phone": "1111111111",
+      "senha": "1234",
+      "id": 2
     }
   ]
 }
