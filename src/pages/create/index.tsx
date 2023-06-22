@@ -16,23 +16,27 @@ import { IFormData } from "./types";
 import {
   Column,
   Container,
-  VoltarLogin,TextHighLight,
+  VoltarLogin,
+  TextHighLight,
   Row,
   SubtitleCreate,
   Title,
   TitleCreate,
-  Wrapper,Span
+  Wrapper,
+  Span,
 } from "./style";
 
 const schema = yup.object({
   name: yup
     .string()
     .required("Campo Obrigatório")
-    .min(5, "No mínimo 3 caracteres"),
+    .min(3, "No mínimo 3 caracteres"),
+
   email: yup.string().email("Email inválido").required("Campo obrigatório"),
-  
+
   phone: yup
-    .string().min(10, "O telefone deve ter no mínimo 10 dígitos")
+    .string()
+    .min(10, "O telefone deve ter no mínimo 10 dígitos")
     .max(12, "O telefone deve ter no máximo 12 dígitos")
     .required("O telefone é obrigatório"),
 
@@ -78,7 +82,7 @@ const Create = () => {
           <Wrapper>
             <TitleCreate>Comece agora grátis</TitleCreate>
             <SubtitleCreate>Crie sua conta e make the change._</SubtitleCreate>
-            <form onSubmit={(onSubmit)}>
+            <form onSubmit={onSubmit}>
               <Input
                 name="name"
                 control={control}
@@ -116,10 +120,15 @@ const Create = () => {
                 leftIcon={<MdLock />}
               />
 
-              <Button title="CRIAR MINHA CONTA GRATÍS" variant="other" type="onSubmit" />
+              <Button
+                title="CRIAR MINHA CONTA GRATÍS"
+                variant="primary"
+                type="onSubmit"
+              />
             </form>
             <Span>
-                <SubtitleCreate>Já tenho conta. </SubtitleCreate> <TextHighLight>Fazer Login.</TextHighLight>
+              <SubtitleCreate>Já tenho conta. </SubtitleCreate>{" "}
+              <TextHighLight>Fazer Login.</TextHighLight>
             </Span>
           </Wrapper>
         </Column>

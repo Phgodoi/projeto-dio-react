@@ -76,7 +76,7 @@ const Login = () => {
                 leftIcon={<MdLock />}
               />
 
-              <Button title="Entrar" variant="secondary" type="submit" />
+              <Button title="Entrar" variant="primary" type="submit" />
             </form>
 
             <Row>

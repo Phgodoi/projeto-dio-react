@@ -30,7 +30,7 @@ const Home = () => {
           </TitleContent>
           <Button
             title="Começar agora"
-            variant="secundary"
+            variant="primary"
             onClick={handleClickSingIn}
           />
         </div>

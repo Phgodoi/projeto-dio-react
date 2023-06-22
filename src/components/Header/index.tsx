@@ -1,6 +1,8 @@
 import logo from "../../assets/logo-full2.png";
 import { Button } from "../Button";
 
+import { useNavigate } from "react-router-dom";
+
 import {
   BuscarInputContainer,
   Container,
@@ -13,7 +15,16 @@ import {
 } from "./style";
 import { IHeader } from "./types";
 
+
 const Header = ({ autentication }: IHeader) => {
+  const navigate = useNavigate();
+
+  const handleClickCreate = () => {
+    navigate("/create");
+  };
+  const handleClickSingIn = () => {
+    navigate("/login");
+  };
   return (
     <Wrapper>
       <Container>
@@ -36,8 +47,8 @@ const Header = ({ autentication }: IHeader) => {
           ) : (
             <>
               <MenuRight href="#">Home</MenuRight>
-              <Button title= "Entrar" />
-              <Button title= "Criar conta" />
+              <Button title= "Entrar" variant="default" onClick={handleClickSingIn}/>
+              <Button title= "Criar conta" variant="other" onClick={handleClickCreate}/>
             </>
           )}
         </Row>
