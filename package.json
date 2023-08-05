@@ -1,6 +1,5 @@
 {
   "name": "projeto-dio-react",
-  "homepage": "https://Phgodoi.github.io/projeto-dio-react",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -30,6 +29,7 @@
     "yup": "^1.2.0"
   },
   "scripts": {
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

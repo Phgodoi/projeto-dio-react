@@ -113,7 +113,7 @@ const Create = () => {
 
               <Input
                 name="senha"
-                errorMessage={errors?.password?.message}
+                errorMessage={errors?.senha?.message}
                 control={control}
                 placeholder="Senha"
                 type="password"
